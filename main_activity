@@ -1,0 +1,91 @@
+package com.example.whatsmygradethissemester;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.os.Bundle;
+import android.view.View;
+import android.widget.EditText;
+import android.widget.TextView;
+
+public class MainActivity extends AppCompatActivity {
+    TextView tv;
+    TextView tv1;
+    TextView tv2;
+    EditText et1;
+    EditText et2;
+    EditText et3;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        tv = findViewById(R.id.gradeView);
+        tv1 = findViewById(R.id.welcomeView);
+        tv2 = findViewById(R.id.numbView);
+        et1 = findViewById(R.id.editGrade);
+        et2 = findViewById(R.id.editGrade2);
+        et3 = findViewById(R.id.editGrade3);
+    }
+
+    public void output (View view)
+    {
+        double numb = Double.parseDouble(et1.getText().toString());
+        double numb2 = Double.parseDouble(et2.getText().toString());
+        double numb3 = Double.parseDouble(et3.getText().toString());
+        double numbAll = numb + numb2 + numb3;
+        double numbDiv = numbAll / 3;
+        tv2.setText(String.valueOf(numbDiv));
+        double grade = Double.parseDouble(String.valueOf(numbDiv));
+        if (grade > 100)
+        {
+            tv.setText("A+");
+            et1.setText("");
+            et2.setText("");
+            et3.setText("");
+        }
+        else if (grade >= 90)
+        {
+            tv.setText("A");
+            et1.setText("");
+            et2.setText("");
+            et3.setText("");
+        }
+        else if (grade >= 80)
+        {
+            tv.setText("B");
+            et1.setText("");
+            et2.setText("");
+            et3.setText("");
+        }
+        else if (grade >= 70)
+        {
+            tv.setText("C");
+            et1.setText("");
+            et2.setText("");
+            et3.setText("");
+        }
+        else if (grade >= 60)
+        {
+            tv.setText("D");
+            et1.setText("");
+            et2.setText("");
+            et3.setText("");
+        }
+        else if (grade >= 50)
+        {
+            tv.setText("F");
+            et1.setText("");
+            et2.setText("");
+            et3.setText("");
+        }
+        else if (grade >= 0)
+        {
+            tv.setText("F--");
+            et1.setText("");
+            et2.setText("");
+            et3.setText("");
+        }
+
+
+
+    }
+}
